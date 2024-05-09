@@ -12,7 +12,7 @@ push:
   my_build_job:
   runs-on: unbuntu-lastest
   steps:
-  - uses: actions/checkout@v3
+    - uses: actions/checkout@v3
   - name: npm install, test amd build
     run: |
       npm instal
