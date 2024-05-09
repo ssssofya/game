@@ -1,0 +1,30 @@
+name : CI
+
+on:
+# События, которые запускают
+push:
+  branches: ["main"]
+  pull_request:
+  branches: ["main"]
+
+  #jobs запускаются параллельно, если не указана последовательность
+  jobs:
+  my_build_job:
+  runs-on: unbuntu-lastest
+  steps:
+  - uses: actions/checkout@v3
+  - name: npm install, test amd build
+    run: |
+      npm instal
+      npm run build
+
+    - name: Run a one -line script
+      run: echo Hello, World!
+
+    - name: Run a multi-line script
+      run: |
+        echo Add other actions to build,
+        echo test, and deploy your project.
+
+    - name: Run JS file for test
+      run: node js/script.js
